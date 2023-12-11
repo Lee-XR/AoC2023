@@ -8,6 +8,8 @@
 		"sourceMap": true,
 		"strict": true,
 		"esModuleInterop": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
 		"forceConsistentCasingInFileNames": true,
 		"allowJs": true,
 		"outDir": "dist"
