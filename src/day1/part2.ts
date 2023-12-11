@@ -42,7 +42,8 @@ async function getSolution() {
 		const lineValue = `${numsArr[0]}${numsArr[numsArr.length - 1]}`;
 		finalSum += parseInt(lineValue);
 	}
+	return finalSum;
 }
 
-const Day1Part2Solution = getSolution();
+const Day1Part2Solution = await getSolution();
 export default Day1Part2Solution;
