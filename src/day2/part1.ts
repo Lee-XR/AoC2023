@@ -1,6 +1,5 @@
 import path from 'path';
 import { getAssetsDirectoryPath, readFileByLine } from '../utils/fs.ts';
-import { lineLogger, logger } from '../utils/log.ts';
 
 const colour = ['red', 'green', 'blue'] as const;
 type Colour = (typeof colour)[number];
