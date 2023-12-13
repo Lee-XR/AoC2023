@@ -1,7 +1,7 @@
-export function logger<T>(logItem: T): void {
-	console.log(logItem);
+export function log<T>(logItem: T): void {
+  console.log(logItem);
 }
 
-export function lineLogger(pattern?: string, count?: number): void {
-	console.log((pattern ?? '-').repeat(count ?? 15));
+export function logLine(pattern: string = "-", count: number = 30): void {
+  console.log(pattern.repeat(count));
 }
