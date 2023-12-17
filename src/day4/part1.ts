@@ -1,13 +1,13 @@
-import path from 'path';
-import { getAssetsDirectoryPath, readFileByLine } from '../utils/fs.ts';
+import { getSolution } from '../utils/base.ts';
+import { getInputFilePath, readFileByLine } from '../utils/fs.ts';
 
-const filePath = path.join(getAssetsDirectoryPath(), 'day4', 'input.txt');
+const filePath = getInputFilePath(4);
 const rl = readFileByLine(filePath);
 
-async function getSolution() {
+async function callback() {
 	for await (const line of rl) {
 	}
 }
 
-const Day4Part1Solution = getSolution();
+const Day4Part1Solution = getSolution(callback);
 export default Day4Part1Solution;

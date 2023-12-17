@@ -10,6 +10,10 @@ export function getAssetsDirectoryPath() {
 	return path.join(getRootDirectoryPath(), 'src', 'assets');
 }
 
+export function getInputFilePath(day: number, fileName: string = 'input.txt') {
+	return path.join(getAssetsDirectoryPath(), `day${day}`, fileName);
+}
+
 export function readFileByLine(filePath: string) {
 	const fileStream = createReadStream(filePath);
 	const rl = createInterface({ input: fileStream });
