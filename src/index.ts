@@ -1,10 +1,11 @@
+import Day4Part1Solution from './day4/part1.ts';
+import { log } from './utils/log.ts';
+
 /*
  *   Day 1 Solutions
  */
 // log(Day1Part1Solution);
 // log(Day1Part2Solution);
-
-import { log } from './utils/log.ts';
 
 /*
  *   Day 2 Solutions
@@ -15,4 +16,9 @@ import { log } from './utils/log.ts';
 /*
  *  Day 3 Solutions
  */
-log('Cannot complete - Give up for Day 3');
+// log('Cannot complete - Give up for Day 3');
+
+/*
+ * Day 4 Solutions
+ */
+log(Day4Part1Solution);
