@@ -1,5 +1,10 @@
-import { getInputFilePath, readFileByLine } from "../utils/fs.ts";
+import {
+  getInputFilePath,
+  getTestFilePath,
+  readFileByLine,
+} from "../utils/fs.ts";
 
+// const filePath = getTestFilePath(4);
 const filePath = getInputFilePath(4);
 const rl = readFileByLine(filePath);
 
@@ -12,9 +17,27 @@ function getMatches(line: string) {
 }
 
 async function getSolution() {
+  const cardInstances: Record<number, number> = {};
+
+  let i = 1;
   for await (const line of rl) {
+    // get no. of matching numbers & add 1 instance (original) for current card
     const matches = getMatches(line);
+    cardInstances[i] = (cardInstances[i] ?? 0) + 1;
+
+    // loop j times for no. of matches
+    for (let j = 1; j <= matches; j++) {
+      // add instances of current cards to next i+j cards
+      cardInstances[i + j] = (cardInstances[i + j] ?? 0) + cardInstances[i];
+    }
+
+    i++;
   }
+
+  return Object.entries(cardInstances).reduce<number>(
+    (acc, [_, cur]) => acc + cur,
+    0
+  );
 }
 
 const Day4Part2Solution = await getSolution();
