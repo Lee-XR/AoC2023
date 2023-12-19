@@ -1,5 +1,5 @@
-import { Day4Part2Solution } from "./day4/part2.ts";
-import { log } from "./utils/log.ts";
+import Day5Part1Solution from './day5/part1.ts';
+import { log } from './utils/log.ts';
 
 /*
  *   Day 1 Solutions
@@ -22,4 +22,9 @@ import { log } from "./utils/log.ts";
  * Day 4 Solutions
  */
 // log(Day4Part1Solution);
-log(Day4Part2Solution);
+// log(Day4Part2Solution);
+
+/*
+ * Day 5 Solutions
+ */
+log(Day5Part1Solution);
