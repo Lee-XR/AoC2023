@@ -1,10 +1,5 @@
-import {
-  getInputFilePath,
-  getTestFilePath,
-  readFileByLine,
-} from "../utils/fs.ts";
+import { getInputFilePath, readFileByLine } from "../utils/fs.ts";
 
-// const filePath = getTestFilePath(4);
 const filePath = getInputFilePath(4);
 const rl = readFileByLine(filePath);
 
