@@ -1,9 +1,9 @@
 import { readFileSync } from 'fs';
-import { getInputFilePath } from '../utils/fs.ts';
+import { getFilePath } from '../utils/fs.ts';
 import { getInput, sortInputs } from './logic.ts';
 
 async function getSolution() {
-	const filePath = getInputFilePath(7);
+	const filePath = getFilePath(7);
 	const inputs = readFileSync(filePath, { encoding: 'utf8' })
 		.split('\n')
 		.map(getInput)
