@@ -32,3 +32,16 @@ export function getNextNode(
 	const currentNode = network[node];
 	return direction === 'L' ? currentNode.left : currentNode.right;
 }
+
+export function getPrimeFactors(n: number) {
+	const factors: number[] = [];
+	let p = 2;
+
+	while (n > 1) {
+		if (n % p === 0) {
+			factors.push(p);
+			n = n / p;
+		} else p++;
+	}
+	return factors;
+}
