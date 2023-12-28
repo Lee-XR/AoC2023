@@ -118,3 +118,8 @@ export function getOppositeDirection(direction: PipeDirections) {
 			return 'east';
 	}
 }
+
+export function checkIsVertice(pipeTile: PipeTiles): boolean {
+	const verticePipeTiles: PipeTiles[] = ['L', 'J', 'F', '7', 'S'];
+	return verticePipeTiles.includes(pipeTile);
+}
