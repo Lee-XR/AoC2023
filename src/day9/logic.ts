@@ -16,3 +16,7 @@ export function getDifference(history: number[]) {
 export function getNextHistoryValue(sequenceLastVals: number[]) {
 	return sequenceLastVals.reduce((acc, cur) => acc + cur, 0);
 }
+
+export function getPrevHistoryValue(sequenceFirstVals: number[]) {
+	return sequenceFirstVals.reduce((acc, cur) => cur - acc, 0);
+}

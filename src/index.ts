@@ -1,4 +1,4 @@
-import Day9Part1Solution from './day9/part1.ts';
+import Day9Part2Solution from './day9/part2.ts';
 import { log } from './utils/log.ts';
 
 /*
@@ -51,4 +51,5 @@ import { log } from './utils/log.ts';
 /*
  * Day 9 Solution
  */
-log(Day9Part1Solution);
+// log(Day9Part1Solution);
+log(Day9Part2Solution);
