@@ -68,3 +68,48 @@ export function getShortestDistance(
 ) {
 	return Math.abs(galaxy1.x - galaxy2.x) + Math.abs(galaxy1.y - galaxy2.y);
 }
+
+export function expandSpace2(image: string[][]) {
+	const emptyColIndex: number[] = [];
+	const emptyRowIndex: number[] = [];
+
+	image.map((row, index) => {
+		if (row.every((v) => v === '.')) emptyRowIndex.push(index);
+	});
+
+	for (let col = 0; col < image[0].length; col++) {
+		if (getColumnValues(image, col).every((v) => v === '.'))
+			emptyColIndex.push(col);
+	}
+	return { emptyColIndex, emptyRowIndex };
+}
+
+function getPointDistance(point1: number, point2: number) {
+	return Math.abs(point1 - point2);
+}
+
+export function getShortestDistance2(
+	galaxy1: GalaxyCoords,
+	galaxy2: GalaxyCoords,
+	emptyRowIndex: number[],
+	emptyColIndex: number[]
+) {
+	const higherX = Math.max(galaxy1.x, galaxy2.x);
+	const lowerX = Math.min(galaxy1.x, galaxy2.x);
+	const higherY = Math.max(galaxy1.y, galaxy2.y);
+	const lowerY = Math.min(galaxy1.y, galaxy2.y);
+
+	const emptyColsNum = emptyColIndex.filter(
+		(n) => n > lowerX && n < higherX
+	).length;
+	const emptyRowsNum = emptyRowIndex.filter(
+		(n) => n > lowerY && n < higherY
+	).length;
+
+	const xDistance =
+		getPointDistance(galaxy1.x, galaxy2.x) + emptyColsNum * 999999;
+	const yDistance =
+		getPointDistance(galaxy1.y, galaxy2.y) + emptyRowsNum * 999999;
+
+	return xDistance + yDistance;
+}
