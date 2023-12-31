@@ -1,3 +1,4 @@
+import Day13Part1Solution from './day13/part1.ts';
 import { log } from './utils/log.ts';
 
 /*
@@ -68,4 +69,9 @@ import { log } from './utils/log.ts';
 /*
  * Day 12 Solution
  */
-log('Cannot complete - Give up for Day 12');
+// log('Cannot complete - Give up for Day 12');
+
+/*
+ * Day 13 Solution
+ */
+log(Day13Part1Solution);
